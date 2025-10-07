@@ -1,98 +1,192 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
+<img width="1024" height="1024" alt="ChatGPT Image 7 de out  de 2025, 16_29_49" src="https://github.com/user-attachments/assets/80f05fb9-a03f-4a22-9340-0bcc11849f90" />
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+# 💊 Fast Farma
 
-## Description
+Sistema backend de gerenciamento de farmácia desenvolvido com NestJS, permitindo o controle completo de produtos e categorias de medicamentos.
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## 📋 Sobre o Projeto
 
-## Project setup
+O Fast Farma é uma API RESTful construída para otimizar as operações diárias de uma farmácia, oferecendo funcionalidades de gerenciamento de produtos farmacêuticos organizados por categorias, facilitando o controle de estoque e a conformidade regulatória.
 
-```bash
-$ npm install
+## 🚀 Tecnologias Utilizadas
+
+- **NestJS** - Framework Node.js progressivo
+- **TypeScript** - Superset JavaScript com tipagem estática
+- **TypeORM** - ORM para manipulação do banco de dados
+- **MySQL/PostgreSQL** - Sistema de gerenciamento de banco de dados
+- **Class Validator** - Validação de dados
+- **Class Transformer** - Transformação de objetos
+
+## 📦 Funcionalidades
+
+### Categorias
+- ✅ Criar nova categoria
+- ✅ Listar todas as categorias
+- ✅ Buscar categoria por ID
+- ✅ Atualizar categoria
+- ✅ Deletar categoria
+- ✅ Buscar categorias por descrição
+
+### Produtos
+- ✅ Criar novo produto
+- ✅ Listar todos os produtos
+- ✅ Buscar produto por ID
+- ✅ Atualizar produto
+- ✅ Deletar produto
+- ✅ Buscar produtos por nome
+- 🔗 Relacionamento com categorias
+
+## 🏗️ Estrutura do Projeto
+
+```
+fast-farma/
+├── src/
+│   ├── categoria/
+│   │   ├── entities/
+│   │   │   └── categoria.entity.ts
+│   │   ├── controllers/
+│   │   │   └── categoria.controller.ts
+│   │   ├── services/
+│   │   │   └── categoria.service.ts
+│   │   └── categoria.module.ts
+│   ├── produto/
+│   │   ├── entities/
+│   │   │   └── produto.entity.ts
+│   │   ├── controllers/
+│   │   │   └── produto.controller.ts
+│   │   ├── services/
+│   │   │   └── produto.service.ts
+│   │   └── produto.module.ts
+│   ├── app.module.ts
+│   └── main.ts
+├── package.json
+└── README.md
 ```
 
-## Compile and run the project
+## 🔧 Instalação e Configuração
 
+### Pré-requisitos
+- Node.js (versão 16 ou superior)
+- npm ou yarn
+- MySQL ou PostgreSQL
+
+### Passo a passo
+
+1. Clone o repositório
 ```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+git clone https://github.com/seu-usuario/fast-farma.git
+cd fast-farma
 ```
 
-## Run tests
-
+2. Instale as dependências
 ```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+npm install
 ```
 
-## Deployment
-
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
-
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
-
+3. Configure as variáveis de ambiente
 ```bash
-$ npm install -g @nestjs/mau
-$ mau deploy
+# Crie um arquivo .env na raiz do projeto
+DB_HOST=localhost
+DB_PORT=3306
+DB_USERNAME=root
+DB_PASSWORD=sua_senha
+DB_DATABASE=db_fastfarma
 ```
 
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+4. Execute as migrations (se aplicável)
+```bash
+npm run migration:run
+```
 
-## Resources
+5. Inicie a aplicação
+```bash
+# Modo desenvolvimento
+npm run start:dev
 
-Check out a few resources that may come in handy when working with NestJS:
+# Modo produção
+npm run start:prod
+```
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+A aplicação estará disponível em `http://localhost:3000`
 
-## Support
+## 📡 Endpoints da API
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+### Categorias
 
-## Stay in touch
+| Método | Endpoint | Descrição |
+|--------|----------|-----------|
+| GET | `/categorias` | Lista todas as categorias |
+| GET | `/categorias/:id` | Busca categoria por ID |
+| GET | `/categorias/descricao/:descricao` | Busca categorias por descrição |
+| POST | `/categorias` | Cria nova categoria |
+| PUT | `/categorias/:id` | Atualiza categoria |
+| DELETE | `/categorias/:id` | Deleta categoria |
 
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+### Produtos
 
-## License
+| Método | Endpoint | Descrição |
+|--------|----------|-----------|
+| GET | `/produtos` | Lista todos os produtos |
+| GET | `/produtos/:id` | Busca produto por ID |
+| GET | `/produtos/nome/:nome` | Busca produtos por nome |
+| POST | `/produtos` | Cria novo produto |
+| PUT | `/produtos/:id` | Atualiza produto |
+| DELETE | `/produtos/:id` | Deleta produto |
 
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+## 📝 Exemplos de Requisições
+
+### Criar Categoria
+```json
+POST /categorias
+{
+  "tipo": "Medicamentos",
+  "descricao": "Medicamentos de uso contínuo"
+}
+```
+
+### Criar Produto
+```json
+POST /produtos
+{
+  "nome": "Dipirona 500mg",
+  "laboratorio": "EMS",
+  "preco": 12.50,
+  "quantidade": 100,
+  "categoria": {
+    "id": 1
+  }
+}
+```
+
+## 🌿 Branches do Projeto
+
+- `main` - Branch principal com código estável
+- `Configurando-o-Projeto` - Configuração inicial do projeto e banco de dados
+- `CRUD-Categoria` - Implementação do CRUD de categorias
+- `CRUD-Produto` - Implementação do CRUD de produtos com relacionamento
+
+## ✅ Testes
+
+```bash
+# Testes unitários
+npm run test
+
+# Testes e2e
+npm run test:e2e
+
+# Cobertura de testes
+npm run test:cov
+```
+
+## 👨‍💻 Desenvolvedor
+
+Desenvolvido como atividade prática do bootcamp Generation Brasil.
+
+## 📄 Licença
+
+Este projeto foi desenvolvido para fins educacionais.
+
+---
+
+⭐ Desenvolvido com NestJS e TypeScript
