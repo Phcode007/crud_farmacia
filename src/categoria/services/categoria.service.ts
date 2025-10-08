@@ -1,6 +1,6 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
+import { ILike, Repository } from 'typeorm';
 import { Categoria } from '../entities/categoria.entity';
 
 @Injectable()
@@ -25,5 +25,17 @@ export class CategoriaService {
       throw new HttpException('Postagem não encontrada!', HttpStatus.NOT_FOUND);
 
     return categoria;
+  }
+
+  async findAllByNome(nome: string): Promise<Categoria[]> {
+    return await this.categoriaRepository.find({
+      where: {
+        nome: ILike(`%${nome}%`),
+      },
+    });
+  }
+
+  async create(categoria: Categoria): Promise<Categoria> {
+    return await this.categoriaRepository.save(categoria);
   }
 }
