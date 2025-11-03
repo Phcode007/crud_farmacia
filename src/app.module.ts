@@ -8,14 +8,15 @@ import { ProdutoModule } from './produto/produto.module';
 @Module({
   imports: [
     TypeOrmModule.forRoot({
-      type: 'mysql',
+      type: 'postgres',
       host: 'localhost',
-      port: 3306,
-      username: 'root',
-      password: 'root123',
+      port: 5432,
+      username: 'postgres',
+      password: 'postgres',
       database: 'db_farma',
       entities: [Categoria, Produto],
       synchronize: true,
+      ssl: false,
     }),
     CategoriaModule,
     ProdutoModule,
